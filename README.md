@@ -43,6 +43,20 @@ Server: Docker Desktop 4.27.1 (136059)
   GitCommit:        de40ad0
 ```
 
+## 利用可能なモデル
+
+最新の情報・詳細は [`openai/whisper` のREADME](https://github.com/openai/whisper?tab=readme-ov-file) を確認してください。
+
+|  サイズ  | パラメータ数 | 英語のみモデル | 多言語モデル | 必須 VRAM | 相対的速度 |
+|:------:|:----------:|:------------------:|:------------------:|:-------------:|:--------------:|
+|  tiny  |    39 M    |     `tiny.en`      |       `tiny`       |     ~1 GB     |      ~32x      |
+|  base  |    74 M    |     `base.en`      |       `base`       |     ~1 GB     |      ~16x      |
+| small  |   244 M    |     `small.en`     |      `small`       |     ~2 GB     |      ~6x       |
+| medium |   769 M    |    `medium.en`     |      `medium`      |     ~5 GB     |      ~2x       |
+| large  |   1550 M   |        N/A         |      `large`       |    ~10 GB     |       1x       |
+
+日本語を処理したい場合は「英語のみモデル」ではなく「多言語モデル」を選択します。
+
 ## 使い方
 
 Docker イメージをビルドします。
