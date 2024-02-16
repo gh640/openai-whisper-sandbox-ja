@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM python:3.12
 
 WORKDIR /app
@@ -12,5 +13,13 @@ RUN apt-get update && \
 COPY ./requirements.txt ./
 
 RUN python -m pip install -r requirements.txt
+
+# `models` で指定されたモデルをダウンロードする:
+ARG models=''
+RUN <<EOF
+for model in ${models}; do
+  whisper --model="${model}" dummy-file
+done
+EOF
 
 COPY . ./

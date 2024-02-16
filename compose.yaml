@@ -1,6 +1,11 @@
 services:
   app:
-    build: ./services/app
+    build: 
+      context: ./services/app
+      args:
+        # ビルド時にダウンロードしたいモデルがあればスペース区切りで指定する:
+        # 例: "tiny base"
+        models: ""
     volumes:
       - ./services/app:/app
       
