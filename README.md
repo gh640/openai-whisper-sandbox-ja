@@ -9,9 +9,9 @@ OpenAI のオープンソース Whisper を Docker で動かすプロジェク�
 - Docker
 - Docker Compose v2
 
-確認時のバージョン:
-
-```bash
+<details>
+<summary>確認時のバージョン:</summary>
+<pre>
 ❯ docker version
 Client:
  Cloud integration: v1.0.35+desktop.10
@@ -41,7 +41,8 @@ Server: Docker Desktop 4.27.1 (136059)
  docker-init:
   Version:          0.19.0
   GitCommit:        de40ad0
-```
+</pre>
+</details>
 
 ## 利用可能なモデル
 
@@ -63,6 +64,14 @@ Docker イメージをビルドします。
 
 ```bash
 docker compose build
+```
+
+ビルド時にモデルのダウンロードを行うこともできます。
+`compose.yaml` の `app` サービスの `build.args` の `models` にモデル名を指定してください。
+
+```yaml
+args:
+  models: "tiny base small"
 ```
 
 `whisper` コマンドに音声ファイルを渡して文字起こしをします。
