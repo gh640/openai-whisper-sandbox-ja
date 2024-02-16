@@ -85,10 +85,11 @@ docker compose run --rm -it bash
 以下コンテナ内 Bash で:
 
 ```bash
-# 言語 `japanese` を指定する（デフォルトのモデル medium が使用される）:
+# 言語 `Japanese` を指定する:
+# （ `--model` を指定しなければデフォルトで `medium` が使用される）
 whisper myaudio.m4a --language Japanese
 
-# 言語 `Japanese` を、モデル `small` を指定する:
+# モデル `small` を指定する:
 whisper myaudio.m4a --language Japanese --model small
 
 # モデルのキャッシュ保存ディレクトリを変更する:
@@ -99,7 +100,9 @@ whisper myaudio.m4a --language Japanese --model_dir ./.cache/whisper
 whisper myaudio.m4a --language Japanese --output_format srt
 ```
 
-Docker リソースを閉じる:
+使い終わったら:
+
+Docker リソースを閉じます。
 
 ```bash
 docker compose down
